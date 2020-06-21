@@ -11,7 +11,7 @@ $( '#btn-submit' ).on( 'click', handleAddClick );
 
 }
 
-function handleAddClick( event ) {
+function handleAddClick(event) {
     console.log( 'Add button was clicked with the event:', event );
   
     event.preventDefault();
@@ -35,4 +35,24 @@ function addEmployee(firstName,lastName,id,title,salary){
     $('#in-id').val('');
     $('#in-title').val('');
     $('#in-salary').val('');
+
+    displayEmployee(employeeArray);
 };
+
+function displayEmployee(employeesToDisplay){
+    $('#out-employees').empty();
+
+    for ( let employee of employeesToDisplay ) {
+        let p = `<p>
+                    First Name: ${employee.firstName} &nbsp;
+                    Last Name: ${employee.lastName} &nbsp;
+                    ID: ${employee.id} &nbsp;
+                    Title: ${employee.title} &nbsp;
+                    Annual Salary: ${employee.salary} 
+
+                    <button class="btn-delete">Delete</button>
+                 </p>`;
+        $('#out-employees').append(p);
+      }
+}
+
