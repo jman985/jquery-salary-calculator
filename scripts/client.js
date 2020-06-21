@@ -66,7 +66,8 @@ function deleteEmployee(event){
 
     employeeArray.splice(container.data('deleteid'), 1); 
      $(this).closest('p').remove();
-
+    
+     calculateMonthlySalary();
 }
 
 
