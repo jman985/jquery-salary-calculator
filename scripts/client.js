@@ -26,7 +26,7 @@ function handleAddClick( event ) {
 };
 
 function addEmployee(firstName,lastName,id,title,salary){
-    let object = { showName, personName }
+    let object = {firstName,lastName,id,title,salary}
 
     employeeArray.push(object);
 
