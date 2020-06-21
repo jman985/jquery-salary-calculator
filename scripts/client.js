@@ -7,8 +7,9 @@ let employeeArray=[];
 function onReady() {
     console.log( 'JQ ready' );
 
-$( '#btn-submit' ).on( 'click', handleAddClick );
+    $( '#btn-submit' ).on( 'click', handleAddClick );
 
+    $('#out-employees').on('click','btn-delete',deleteEmployee)
 }
 
 function handleAddClick(event) {
@@ -48,11 +49,38 @@ function displayEmployee(employeesToDisplay){
                     Last Name: ${employee.lastName} &nbsp;
                     ID: ${employee.id} &nbsp;
                     Title: ${employee.title} &nbsp;
-                    Annual Salary: ${employee.salary} 
+                    Annual Salary: $${employee.salary} 
 
                     <button class="btn-delete">Delete</button>
                  </p>`;
         $('#out-employees').append(p);
       }
+      calculateMonthlySalary();
 }
 
+function deleteEmployee(){
+    console.log('Delete clicked');
+    $( this ).closest('p').toggleClass('delete'); // get ancestor of given type
+
+}
+
+
+
+function calculateMonthlySalary() {
+    monthlySalary = 0;
+    let salaryTotal = 0;
+
+    for (let i = 0; i < employeeArray.length; i++) {
+        let employee = employeeArray[i];
+        salaryTotal += parseInt(employee.salary);
+    }
+
+monthlySalary = salaryTotal/12;
+    monthlySalary = salaryTotal/12;
+    $('#monthly-salary').empty();
+    $('#monthly-salary').append('<h2>Monthly Salary: $' + monthlySalary.toFixed(2) + '</h2>');
+    if(monthlySalary > 20000) {
+        $('#monthly-salary').addClass('WARNING');
+    }
+
+}
