@@ -41,19 +41,19 @@ function addEmployee(firstName,lastName,id,title,salary){
 };
 
 function displayEmployee(employeesToDisplay){
-    $('#out-employees').empty();
+    $('#employee-table').empty();
 
     for ( let employee of employeesToDisplay ) {
-        let p = `<p>
-                    First Name: ${employee.firstName} &nbsp;
-                    Last Name: ${employee.lastName} &nbsp;
-                    ID: ${employee.id} &nbsp;
-                    Title: ${employee.title} &nbsp;
-                    Annual Salary: $${employee.salary} 
+        let p = `<tr>
+                    <th>${employee.firstName} </th>
+                    <th>${employee.lastName} </th>
+                    <th>${employee.id} </th>
+                    <th>${employee.title} </th>
+                    <th>$${employee.salary} </th>
 
-                    <button class="btn-delete">Delete</button>
-                 </p>`;
-        $('#out-employees').append(p);
+                    <th><button class="btn-delete">Delete</button></th>
+                 </tr>`;
+        $('#employee-table').append(p);
       }
       calculateMonthlySalary();
 }
@@ -65,7 +65,7 @@ function deleteEmployee(event){
     let container = $(this).parent();
 
     employeeArray.splice(container.data('deleteid'), 1); 
-     $(this).closest('p').remove();
+     $(this).closest('tr').remove();
     
      calculateMonthlySalary();
 }
