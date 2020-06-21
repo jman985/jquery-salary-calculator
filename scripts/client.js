@@ -9,7 +9,7 @@ function onReady() {
 
     $( '#btn-submit' ).on( 'click', handleAddClick );
 
-    $('#out-employees').on('click','btn-delete',deleteEmployee)
+    $('#out-employees').on('click','.btn-delete',deleteEmployee)
 }
 
 function handleAddClick(event) {
@@ -58,12 +58,16 @@ function displayEmployee(employeesToDisplay){
       calculateMonthlySalary();
 }
 
-function deleteEmployee(){
+function deleteEmployee(event){
     console.log('Delete clicked');
-    $( this ).closest('p').toggleClass('delete'); // get ancestor of given type
+    event.preventDefault();
+
+    let container = $(this).parent();
+
+    employeeArray.splice(container.data('deleteid'), 1); 
+     $(this).closest('p').remove();
 
 }
-
 
 
 function calculateMonthlySalary() {
