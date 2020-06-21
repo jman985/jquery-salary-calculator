@@ -6,8 +6,7 @@
     animation: blinkingText 1.2s infinite;
     animation-iteration-count: 30;
     opacity:    0.5; 
-    top:        0; 
-    left:       0; 
+    text-align: center;
   }
   @keyframes blinkingText{
       0%{     color: red;    }
@@ -19,8 +18,16 @@
 
   table, th, td {
     border: 1px solid black;
-  }
+    margin: auto;
+}
 
+#tabletitle{
+    text-align: center;
+}
   #tablehead{
     background-color: blanchedalmond;
+  }
+
+  #monthly-salary{
+      text-align: center;
   }
