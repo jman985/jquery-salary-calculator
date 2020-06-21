@@ -54,9 +54,9 @@ function displayEmployee(employeesToDisplay){
                     <th><button class="btn-delete">Delete</button></th>
                  </tr>`;
         $('#employee-table').append(p);
-      }
+      };
       calculateMonthlySalary();
-}
+};
 
 function deleteEmployee(event){
     console.log('Delete clicked');
@@ -80,7 +80,6 @@ function calculateMonthlySalary() {
         salaryTotal += parseInt(employee.salary);
     }
 
-monthlySalary = salaryTotal/12;
     monthlySalary = salaryTotal/12;
     $('#monthly-salary').empty();
     $('#monthly-salary').append('<h2>Monthly Salary: $' + monthlySalary.toFixed(2) + '</h2>');
@@ -88,4 +87,4 @@ monthlySalary = salaryTotal/12;
         $('#monthly-salary').append('<h2 id="warning">WARNING<h2>');
     }
 
-}
+};
