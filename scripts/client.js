@@ -80,7 +80,7 @@ monthlySalary = salaryTotal/12;
     $('#monthly-salary').empty();
     $('#monthly-salary').append('<h2>Monthly Salary: $' + monthlySalary.toFixed(2) + '</h2>');
     if(monthlySalary > 20000) {
-        $('#monthly-salary').addClass('WARNING');
+        $('#monthly-salary').append('<h2 id="warning">WARNING<h2>');
     }
 
 }

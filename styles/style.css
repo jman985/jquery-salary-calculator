@@ -1,0 +1,13 @@
+#warning{
+    color: red;
+    font-size: xx-large;
+    animation: blinkingText 1.2s infinite;
+    animation-iteration-count: 30;
+  }
+  @keyframes blinkingText{
+      0%{     color: red;    }
+      49%{    color:red; }
+      60%{    color: transparent; }
+      99%{    color:transparent;  }
+      100%{   color:red;    }
+  }
