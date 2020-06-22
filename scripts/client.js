@@ -68,7 +68,7 @@ function deleteEmployee(event){
      $(this).closest('tr').remove();
     
      calculateMonthlySalary();
-}
+};
 
 
 function calculateMonthlySalary() {
@@ -78,13 +78,17 @@ function calculateMonthlySalary() {
     for (let i = 0; i < employeeArray.length; i++) {
         let employee = employeeArray[i];
         salaryTotal += parseInt(employee.salary);
-    }
+    };
 
     monthlySalary = salaryTotal/12;
     $('#monthly-salary').empty();
     $('#monthly-salary').append('<h2>Monthly Salary: $' + monthlySalary.toFixed(2) + '</h2>');
     if(monthlySalary > 20000) {
+        $('#monthly-salary').css("color","red")
         $('#monthly-salary').append('<h2 id="warning">WARNING<h2>');
-    }
+    }else{
+        $('#monthly-salary').css("color","black")
+
+    };
 
 };
