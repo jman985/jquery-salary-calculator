@@ -84,10 +84,11 @@ function calculateMonthlySalary() {
     $('#monthly-salary').empty();
     $('#monthly-salary').append('<h2>Monthly Salary: $' + monthlySalary.toFixed(2) + '</h2>');
     if(monthlySalary > 20000) {
-        $('#monthly-salary').css("color","red")
-        $('#monthly-salary').append('<h2 id="warning">WARNING<h2>');
+        $('#monthly-salary').css("background-color","red")
+        $('#container').append('<h2 id="warning">WARNING<h2>');
     }else{
-        $('#monthly-salary').css("color","black")
+        $('#monthly-salary').css("background-color","white")
+        $('#container').remove();
 
     };
 
