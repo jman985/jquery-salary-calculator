@@ -24,4 +24,4 @@ JavaScript, jQuery
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. Special thanks to Mary Mosman, dEv Jana, and the entire Paxos cohort.
 
 ## Support
-If you have suggestions or issues, please email me at [jman985@gmail.com](www.google.com)
+If you have any suggestions or issues, please feel free to email me at [jman985@gmail.com](www.google.com).
