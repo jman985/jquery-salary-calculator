@@ -1,5 +1,5 @@
-# PROJECT NAME
-jQuery Salary Calculator
+# jQuery Salary Calculator
+
 
 ## Description
 
